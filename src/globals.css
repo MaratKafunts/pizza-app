@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    right: 22px;
+    transform: rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    right: 70px;
+    transform: rotate(0);
+  }
+}
+
+@keyframes fadeOutScale {
+  0% {
+    opacity: 1;
+    right: 70px;
+  }
+  100% {
+    opacity: 0;
+    right: 22px;
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes scaleCheckout {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes scaleCheckoutTT {
+  0% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scale {
+  0% {
+    right: 90px;
+    transform: scale(1.1)
+  }
+  100% {
+    opacity: 0;
+    right: 22px;
+    transform: scale(1.1)
+  }
+}

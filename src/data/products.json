@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cheese-pizza",
+    "name": "Cheese Pizza",
+    "price": 12,
+    "cookingTime": 15,
+    "category": "Pizza",
+    "image": "/images/pizza/cheesepizza.png"
+  },
+  {
+    "id": "pepperoni-pizza",
+    "name": "Pepperoni Pizza",
+    "price": 15,
+    "cookingTime": 17,
+    "category": "Pizza",
+    "image": "/images/pizza/pepperonipizza.png"
+  },
+  {
+    "id": "chicken-tenders-bucket",
+    "name": "Tenders Bucket",
+    "price": 19,
+    "cookingTime": 12,
+    "category": "Pack",
+    "image": "/images/pack/chickentenders.png"
+  },
+  {
+    "id": "chicken-wings-bucket",
+    "name": "Wings Bucket",
+    "price": 17,
+    "cookingTime": 14,
+    "category": "Pack",
+    "image": "/images/pack/chickenwings.png"
+  },
+  {
+    "id": "regular-fries",
+    "name": "Regular Fries",
+    "price": 5,
+    "cookingTime": 5,
+    "category": "Fries",
+    "image": "/images/fries/regularfries.png"
+  },
+  {
+    "id": "cheese-fries",
+    "name": "Cheese Fries",
+    "price": 8,
+    "cookingTime": 6,
+    "category": "Fries",
+    "image": "/images/fries/cheesefries.png"
+  },
+  {
+    "id": "cheese-burger",
+    "name": "Cheese Burger",
+    "price": 11,
+    "cookingTime": 10,
+    "category": "Burger",
+    "image": "/images/burger/cheeseburger.png"
+  },
+  {
+    "id": "chicken-burger",
+    "name": "Chicken Burger",
+    "price": 12,
+    "cookingTime": 11,
+    "category": "Burger",
+    "image": "/images/burger/chickenburger.png"
+  }
+]
