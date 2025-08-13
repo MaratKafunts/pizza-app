@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import CreditCardBackgound from "@/components/ui/CreditCardBackground.tsx/CreditCardBackground";
 import CreditCardContent from "@/components/ui/CreditCardContent/CreditCardContent";
 import CheckoutProductCard from "@/components/ui/CheckoutProductCard/CheckoutProductCard";
@@ -10,20 +10,20 @@ import { AnimatePresence } from "framer-motion";
 
 const CheckoutPanel = () => {
 	const { products } = useCart();
-
-	// const initialValue = 0;
-	// const sumWithInitial = products.reduce((accumulator, currentValue) => accumulator.p + currentValue, initialValue);
+	const [isCreditInputActive, setIsCreditInputActive] = useState<boolean>(false);
 
 	return (
 		<div
 			style={{
 				boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
 			}}
-			className="box-border flex flex-col justify-start p-[45px] h-[100vh] bg-[#FFFFFF]"
+			className="relative box-border [@media(min-width:1377px)]:min-h-[100dvh] flex flex-col justify-start p-[45px] bg-[#FFFFFF]"
 		>
-			<div className="relative">
-				<CreditCardBackgound />
-				<CreditCardContent />
+			<div className="flex justify-center">
+				<div onClick={() => setIsCreditInputActive((prev) => !prev)} className="relative w-[405px]">
+					<CreditCardBackgound />
+					<CreditCardContent isCreditInputActive={isCreditInputActive} />
+				</div>
 			</div>
 
 			<div className="mt-[63px]">
@@ -32,8 +32,9 @@ const CheckoutPanel = () => {
 					{products.slice(0, 2).map((product) => (
 						<CheckoutProductCard key={product.id} product={product} />
 					))}
+
+					{products.length > 0 && <OrderTotal key="order-total" />}
 				</AnimatePresence>
-				<OrderTotal />
 			</div>
 		</div>
 	);

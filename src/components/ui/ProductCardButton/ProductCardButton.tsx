@@ -17,7 +17,7 @@ interface ProductCardButtonProps {
 
 const ProductCardButton: React.FC<ProductCardButtonProps> = ({ product, action, checkout }) => {
 	const [isPressed, setIsPressed] = useState(false);
-	const { addProductToCart, removeProductFromCart, products } = useCart();
+	const { addProductToCart, decrementProductQuantity, products } = useCart();
 
 	const isAdd = action === Action.Add;
 	const findProduct = products.find((p) => p.id === product.id);
@@ -29,7 +29,7 @@ const ProductCardButton: React.FC<ProductCardButtonProps> = ({ product, action, 
 		if (isAdd) {
 			addProductToCart(product);
 		} else {
-			removeProductFromCart(product);
+			decrementProductQuantity(product);
 		}
 	};
 

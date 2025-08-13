@@ -7,10 +7,9 @@ import React from "react";
 
 const page = () => {
 	return (
-		<div className="flex justify-between">
-			<div className="relative p-[35px]">
+		<div className="flex [@media(max-width:1377px)]:flex-col justify-between">
+			<div className="w-full relative p-[35px]">
 				<Header />
-				{/* <Banner /> */}
 				<MenuCategory />
 				<Menu />
 			</div>

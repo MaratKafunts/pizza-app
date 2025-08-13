@@ -4,7 +4,8 @@ import { createContext, useContext, useState, ReactNode, useEffect } from "react
 
 type CartContextType = {
 	addProductToCart: (product: Product) => void;
-	removeProductFromCart: (product: Product) => void;
+	decrementProductQuantity: (product: Product) => void;
+	removeProductFromCart: (id: string) => void;
 	products: Product[];
 };
 
@@ -36,7 +37,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 		});
 	};
 
-	const removeProductFromCart = (product: Product) => {
+	const decrementProductQuantity = (product: Product) => {
 		setProducts((prev) => {
 			const existingProduct = prev.find((p) => p.id === product.id);
 			if (existingProduct) {
@@ -51,8 +52,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 		});
 	};
 
+	const removeProductFromCart = (id: string) => {
+		setProducts((prev) => prev.filter((product) => product.id !== id));
+	};
+
 	return (
-		<CartContext.Provider value={{ addProductToCart, removeProductFromCart, products }}>
+		<CartContext.Provider value={{ addProductToCart, decrementProductQuantity, removeProductFromCart, products }}>
 			{children}
 		</CartContext.Provider>
 	);

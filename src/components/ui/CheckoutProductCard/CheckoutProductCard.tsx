@@ -3,6 +3,7 @@ import { Product } from "@/types/product";
 import Image from "next/image";
 import ProductCardButton, { Action } from "../ProductCardButton/ProductCardButton";
 import { motion } from "framer-motion";
+import ProductCardDeleteButton from "../ProductCardDeleteButton/ProductCardDeleteButton";
 
 interface CheckoutProductCardProps {
 	product: Product;
@@ -18,6 +19,7 @@ const CheckoutProductCard: React.FC<CheckoutProductCardProps> = ({ product }) =>
 			style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
 			className="relative mt-[30px] bg-[#FFFFFF] py-[5px] h-[100px] rounded-[30px] flex flex-row justify-around items-center"
 		>
+			<ProductCardDeleteButton product={product} />
 			<div className="flex justify-start items-center w-full">
 				<Image
 					className="object-contain p-2"
