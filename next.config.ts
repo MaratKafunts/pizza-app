@@ -1,12 +1,16 @@
+// next.config.ts
 import type { NextConfig } from "next";
 
-const repo = "pizza-app"; // название репозитория
+const isProd = process.env.NODE_ENV === "production";
+const repo = "pizza-app";
 
 const nextConfig: NextConfig = {
-	output: "export", // обязательный экспорт для GH Pages
-	basePath: `/${repo}`, // чтобы роуты работали
-	assetPrefix: `/${repo}/`, // чтобы стили, скрипты, картинки искались в подпапке
-	images: { unoptimized: true }, // для next/image на статике
+	reactStrictMode: true,
+	output: "export",
+	trailingSlash: true, // Важно для GitHub Pages
+	images: { unoptimized: true },
+	basePath: isProd ? `/${repo}` : "",
+	assetPrefix: isProd ? `/${repo}/` : "",
 };
 
 export default nextConfig;

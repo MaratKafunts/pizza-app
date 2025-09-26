@@ -1,0 +1,72 @@
+@layer utilities {
+  @media (max-width: 1377px) {
+    .flex-col-1377 {
+      flex-direction: column;
+    }
+    .min-h-1377 {
+      min-height: 100dvh;
+    }
+    .max-1377\:flex-col {
+      flex-direction: column;
+    }
+  } 
+
+  @media (min-width: 1377px) {
+    .min-h-1377 {
+      min-height: 100dvh;
+    }
+  } 
+
+  @media (max-width: 875px) {
+    .max-875\:flex-col {
+      flex-direction: column;
+    }
+    .max-875\:justify-center {
+      justify-content: center;
+    }
+    .max-875\:mt-5 {
+      margin-top: 1.25rem;
+    }
+    .max-875\:text-center {
+      text-align: center;
+    }
+    .max-875\:gap-6 {
+      gap: 24px;
+    }
+    .max-875\:flex-wrap {
+      flex-wrap: wrap;
+    }
+    .max-875\:gap-4 {
+      gap: 16px;
+    }
+  }
+  @media (max-width: 500px) {
+    .max-500\:ImageSize {
+      height: 160px;
+      width: 160px;
+    }
+    .max-500\:text16 {
+      font-size: 16px
+    }
+    .max-500\:text15 {
+      font-size: 15px
+    }
+    .max-500\:text25 {
+      font-size: 25px
+    }
+    .max-500\:bottom14 {
+      font-size: 25px
+    }
+    .max-500\:right61 {
+      right: 61px
+    }
+  }
+}
+
+
+@layer utilities {
+  .boxShadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+

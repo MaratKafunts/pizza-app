@@ -13,7 +13,7 @@ const ProductCardDeleteButton: React.FC<ProductCardDeleteButtonProps> = ({ produ
 		removeProductFromCart(product.id);
 	};
 	return (
-		<div onClick={removeProduct} className="cursor-pointer absolute top-2 right-8">
+		<div onClick={removeProduct} className="cursor-pointer absolute top-2 right-4">
 			<HighlightOffIcon />
 		</div>
 	);

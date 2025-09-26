@@ -1,40 +1,33 @@
 "use client";
-import React, { useState } from "react";
-import CreditCardBackgound from "@/components/ui/CreditCardBackground.tsx/CreditCardBackground";
-import CreditCardContent from "@/components/ui/CreditCardContent/CreditCardContent";
+import React from "react";
 import CheckoutProductCard from "@/components/ui/CheckoutProductCard/CheckoutProductCard";
 import { useCart } from "@/context/CartContext";
 import OrderTotal from "@/components/ui/OrderTotal/OrderTotal";
 import OrderHeaderSection from "@/components/ui/OrderHeaderSection/OrderHeaderSection";
-import { AnimatePresence } from "framer-motion";
+import TagFacesTwoToneIcon from "@mui/icons-material/TagFacesTwoTone";
 
 const CheckoutPanel = () => {
 	const { products } = useCart();
-	const [isCreditInputActive, setIsCreditInputActive] = useState<boolean>(false);
 
 	return (
-		<div
-			style={{
-				boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-			}}
-			className="relative box-border [@media(min-width:1377px)]:min-h-[100dvh] flex flex-col justify-start p-[45px] bg-[#FFFFFF]"
-		>
-			<div className="flex justify-center">
-				<div onClick={() => setIsCreditInputActive((prev) => !prev)} className="relative w-[405px]">
-					<CreditCardBackgound />
-					<CreditCardContent isCreditInputActive={isCreditInputActive} />
+		<div className="relative box-border boxShadow h-full flex flex-col w-full justify-start p-[45px] bg-[#FFFFFF]">
+			<div className="mx-auto max-[500px]:w-full relative flex justify-between items-center w-[400px] rounded-[25px] p-8 bg-gradient-to-r from-orange-400 via-yellow-300 to-amber-100 shadow-md">
+				<div>
+					<p className="text-2xl font-semibold text-white">Welcome to</p>
+					<h1 className="text-4xl font-extrabold tracking-wide text-white drop-shadow-md">FoodONTray</h1>
+				</div>
+				<div className="absolute top-4 right-4 text-black">
+					<TagFacesTwoToneIcon />
 				</div>
 			</div>
 
 			<div className="mt-[63px]">
-				<OrderHeaderSection />
-				<AnimatePresence>
-					{products.slice(0, 2).map((product) => (
-						<CheckoutProductCard key={product.id} product={product} />
-					))}
+				<OrderHeaderSection products={products} />
+				{products.slice(0, 2).map((product) => (
+					<CheckoutProductCard key={product.id} product={product} />
+				))}
 
-					{products.length > 0 && <OrderTotal key="order-total" />}
-				</AnimatePresence>
+				{products.length > 0 && <OrderTotal key="order-total" />}
 			</div>
 		</div>
 	);

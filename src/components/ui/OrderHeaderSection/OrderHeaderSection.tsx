@@ -1,17 +1,24 @@
-import { useRouter } from "next/navigation";
+import { Product } from "@/types/product";
+import Link from "next/link";
 
-const OrderHeaderSection = () => {
-	const router = useRouter();
+interface props {
+	products: Product[];
+}
+
+const OrderHeaderSection: React.FC<props> = ({ products }) => {
 	return (
-		<div className="flex flex-row justify-between items-center">
-			<h2 className="text-[38px] text-black font-bold">Order Menu</h2>
-			<button
-				onClick={() => router.push("/order")}
-				className="cursor-pointer text-[24px] text-[#FF9921] font-bold"
-			>
-				See All
-			</button>
-		</div>
+		<>
+			{products.length ? (
+				<div className="flex flex-row justify-between items-center max-500:flex-col">
+					<h2 className="text-4xl text-black font-bold">Order Menu</h2>
+					<Link href="/order" className="cursor-pointer text-[24px] text-[#FF9921] font-bold">
+						See All
+					</Link>
+				</div>
+			) : (
+				""
+			)}
+		</>
 	);
 };
 

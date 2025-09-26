@@ -8,16 +8,13 @@ const SearchInput = () => {
 	const { setQuery, query } = useSearch();
 
 	return (
-		<div className="relative">
-			<div className="absolute left-3 top-[25%]">
-				<SearchIcon style={{ fontSize: "36px", color: "#61656F" }} />
-			</div>
+		<div className="flex max-875:mt-5 items-center bg-[#B4BCCF69] rounded-2xl px-4 w-80 h-16">
+			<SearchIcon style={{ fontSize: "28px", color: "#61656F" }} />
 			<input
-				className="bg-[#B4BCCF69] w-[360px] h-[60px] rounded-[15px] text-2xl pl-[76px] pr-5"
+				className="bg-transparent outline-none text-2xl ml-2"
 				placeholder="Search"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
-				type="text"
 			/>
 		</div>
 	);
