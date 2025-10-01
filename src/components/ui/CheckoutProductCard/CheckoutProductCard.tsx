@@ -9,8 +9,6 @@ interface CheckoutProductCardProps {
 	product: Product;
 }
 
-const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
 const CheckoutProductCard: React.FC<CheckoutProductCardProps> = ({ product }) => {
 	return (
 		<div className="relative mt-7 boxShadow bg-[#FFFFFF] py-1.5 h-24 rounded-3xl flex flex-row justify-around items-center">
@@ -18,7 +16,7 @@ const CheckoutProductCard: React.FC<CheckoutProductCardProps> = ({ product }) =>
 			<div className="flex justify-start items-center w-full">
 				<Image
 					className="object-contain p-2"
-					src={`${base}${product.image}`}
+					src={`${product.image}`}
 					alt={product.name}
 					width={90}
 					height={90}
